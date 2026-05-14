@@ -21,7 +21,7 @@ export default function AudiencePage({ params }: Props) {
         <img
           src="/images/logo.png"
           alt="HIKEKICKS"
-          className="h-14 w-auto opacity-90"
+          className="h-28 w-auto opacity-90"
         />
       </div>
 
