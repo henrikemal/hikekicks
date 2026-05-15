@@ -1,20 +1,21 @@
 const categories = [
   {
-    title: "Fashion Formal",
+    title: "Formal",
     slug: "formal",
     desc: "Tampilan rapi untuk acara, kerja, sekolah, dan event.",
     items: ["Anak", "Dewasa"],
   },
 
   {
-    title: "Fashion Casual",
-    slug: "casual",
-    desc: "Daily wear untuk anak dan dewasa.",
-    items: ["Anak", "Dewasa"],
-  },
+  title: "Casual & Sport",
+  slug: "casual",
+  desc: "Daily wear & Sportwear untuk anak dan dewasa.",
+  image: "/images/casual.jpg",
+  items: ["Anak", "Dewasa"],
+},
 
   {
-    title: "Fashion Extreme",
+    title: "Extreme",
     slug: "extreme",
     desc: "Style bold, street, tactical, dan karakter kuat.",
     items: ["Anak", "Dewasa"],
@@ -59,9 +60,19 @@ export default function Home() {
             key={cat.title}
             className="rounded-3xl border border-white/10 bg-white/5 p-6"
           >
-            <div className="flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-800 to-gray-950">
-              <span className="text-gray-500">{cat.title}</span>
-            </div>
+            <div className="h-64 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-950">
+  {cat.image ? (
+    <img
+      src={cat.image}
+      alt={cat.title}
+      className="h-full w-full object-cover object-[center_20%]"
+    />
+  ) : (
+    <div className="flex h-full items-center justify-center">
+      <span className="text-gray-500">{cat.title}</span>
+    </div>
+  )}
+</div>
 
             <h3 className="mt-6 text-2xl font-semibold">{cat.title}</h3>
 
