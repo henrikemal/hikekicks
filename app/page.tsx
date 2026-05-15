@@ -54,48 +54,48 @@ export default function Home() {
         </button>
       </section>
 
-      <section className="grid gap-8 px-6 pb-24 md:grid-cols-3">
-        {categories.map((cat) => (
-          <div
-            key={cat.title}
-            className="rounded-3xl border border-white/10 bg-white/5 p-6"
-          >
-            <div className="h-64 overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-950">
-  {cat.image ? (
-    <img
-      src={cat.image}
-      alt={cat.title}
-      className="h-full w-full object-cover object-[center_20%]"
-    />
-  ) : (
-    <div className="flex h-full items-center justify-center">
-      <span className="text-gray-500">{cat.title}</span>
-    </div>
-  )}
-</div>
-
-            <h3 className="mt-6 text-2xl font-semibold">{cat.title}</h3>
-
-            <p className="mt-3 text-gray-400">{cat.desc}</p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {cat.items.map((item) => (
-                <a
-  key={item}
-  href={`/${cat.slug}/${item.toLowerCase()}`}
-  className="rounded-full border border-white/10 px-3 py-1 text-xs text-gray-300 hover:bg-white hover:text-black"
->
-  {item}
-</a>
-              ))}
-            </div>
-
-            <button className="mt-8 w-full border border-white py-3 transition hover:bg-white hover:text-black">
-              VIEW COLLECTION
-            </button>
+      <section className="grid gap-8 px-6 pb-24 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+  {categories.map((cat) => (
+    <div
+      key={cat.title}
+      className="rounded-3xl border border-white/10 bg-white/5 p-6"
+    >
+      <div className="h-56 overflow-hidden rounded-2xl bg-black sm:h-64 lg:h-64">
+        {cat.image ? (
+         <img
+  src={cat.image}
+  alt={cat.title}
+  className="h-full w-full object-contain object-center transition duration-500 hover:scale-105"
+/>
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <span className="text-gray-500">{cat.title}</span>
           </div>
+        )}
+      </div>
+
+      <h3 className="mt-6 text-2xl font-semibold">{cat.title}</h3>
+
+      <p className="mt-3 text-gray-400">{cat.desc}</p>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        {cat.items.map((item) => (
+          <a
+            key={item}
+            href={`/${cat.slug}/${item.toLowerCase()}`}
+            className="rounded-full border border-white/10 px-3 py-1 text-xs text-gray-300 transition hover:bg-white hover:text-black"
+          >
+            {item}
+          </a>
         ))}
-      </section>
+      </div>
+
+      <button className="mt-8 w-full border border-white py-3 transition hover:bg-white hover:text-black">
+        VIEW COLLECTION
+      </button>
+    </div>
+  ))}
+</section>
     </main>
   );
 }
