@@ -19,6 +19,7 @@ const categories = [
     title: "Extreme",
     slug: "extreme",
     desc: "Style bold, street, tactical, dan karakter kuat.",
+    image: "/images/extreme.jpg",
     items: ["Anak", "Dewasa"],
   },
 ];
