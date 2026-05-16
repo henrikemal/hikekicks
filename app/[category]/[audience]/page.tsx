@@ -1,11 +1,40 @@
 type Props = {
-  params: {
+  params: Promise<{
     category: string;
     audience: string;
-  };
+  }>;
 };
 
-export default function AudiencePage({ params }: Props) {
+export default async function AudiencePage({ params }: Props) {
+
+  const { category, audience } = await params;
+
+  let currentImage = "/images/logo.png";
+
+  if (category === "casual" && audience === "anak") {
+    currentImage = "/images/casual-anak.png";
+  }
+
+  if (category === "casual" && audience === "dewasa") {
+    currentImage = "/images/casual-dewasa.png";
+  }
+
+  if (category === "formal" && audience === "anak") {
+    currentImage = "/images/formal-anak.png";
+  }
+
+  if (category === "formal" && audience === "dewasa") {
+    currentImage = "/images/formal-dewasa.png";
+  }
+
+  if (category === "extreme" && audience === "anak") {
+    currentImage = "/images/extreme-anak.png";
+  }
+
+  if (category === "extreme" && audience === "dewasa") {
+    currentImage = "/images/extreme-dewasa.png";
+  }
+
   const collections = [
     "Baju & Celana",
     "Jaket",
@@ -16,28 +45,30 @@ export default function AudiencePage({ params }: Props) {
   return (
     <main className="min-h-screen bg-black px-6 py-16 text-white">
 
-      {/* Logo */}
+      {/* LOGO */}
       <div className="mb-16 flex justify-center">
         <img
-          src="/images/logo.png"
+          src={currentImage}
           alt="HIKEKICKS"
-          className="h-28 w-auto opacity-90"
+          className="h-24 sm:h-32 md:h-40 lg:h-56 w-auto object-contain"
         />
       </div>
 
-      {/* Title */}
+      {/* TITLE */}
       <div className="text-center">
-        <h1 className="text-5xl font-bold uppercase">
-          {params.category}
-        </h1>
+        <h1 className="text-4xl font-bold uppercase">
+  {category === "casual"
+    ? "Casual & Sport"
+    : category}
+</h1>
 
-        <p className="mt-4 text-gray-400 text-xl uppercase">
-          {params.audience}
+       <p className="mt-1 text-lg uppercase tracking-[0.3em] text-gray-500">
+          {audience}
         </p>
       </div>
 
-      {/* Collections */}
-      <section className="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {/* COLLECTION */}
+      <section className="mt-20 grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
 
         {collections.map((item) => (
           <div

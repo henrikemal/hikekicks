@@ -3,12 +3,13 @@ const categories = [
     title: "Formal",
     slug: "formal",
     desc: "Tampilan rapi untuk acara, kerja, sekolah, dan event.",
+     image: "/images/Formal.jpg",
     items: ["Anak", "Dewasa"],
   },
 
   {
   title: "Casual & Sport",
-  slug: "casual",
+  slug: "casual & Sport",
   desc: "Daily wear & Sportwear untuk anak dan dewasa.",
   image: "/images/casual.jpg",
   items: ["Anak", "Dewasa"],
@@ -29,7 +30,7 @@ export default function Home() {
         <h1 className="text-xl font-bold tracking-[0.3em]">HIKEKICKS</h1>
 
         <div className="hidden gap-6 text-sm text-gray-300 md:flex">
-          <a href="#">Casual</a>
+          <a href="#">Casual & Sport</a>
           <a href="#">Formal</a>
           <a href="#">Extreme</a>
           <a href="#">Contact</a>
