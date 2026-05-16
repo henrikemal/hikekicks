@@ -3,7 +3,7 @@ const categories = [
     title: "Formal",
     slug: "formal",
     desc: "Tampilan rapi untuk acara, kerja, sekolah, dan event.",
-     image: "/images/Formal.jpg",
+     image: "/images/formal.jpg",
     items: ["Anak", "Dewasa"],
   },
 
